@@ -1,12 +1,13 @@
-import urllib.request, time, sprite_creator, io, os
+import os
+import sprite_creator
 
 SUFFIX = ''
-SPRITE_NAME = 'types'
+SPRITE_NAME = 'awakenings'
 IMAGE_DIR = 'Sprites/' + SPRITE_NAME + ' Images'
 DATA_FILE_LOCATION = 'Sprites/' + SPRITE_NAME + 'Sprite' + SUFFIX + '.txt'
 IMAGE_WIDTH = 25
 IMAGE_HEIGHT = 25
-IMAGE_GAP = 1
+IMAGE_GAP = 2
 IMAGES_ACROSS = 4
 
 SPRITE_FILE_NAME = 'Sprites/' + SPRITE_NAME + 'Sprite' + SUFFIX

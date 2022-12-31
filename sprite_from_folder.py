@@ -16,24 +16,6 @@ sprite.create_new()
 
 lines = [
     """return {{
-        settings = {{
-            align = 'middle',
-            autolinksuffix = '',
-            defaultlengthkey = 'link',
-            defaultlinkkey = 'link',
-            height = {},
-            lookup = 'SPRITENAMEnames',
-            name = 'SPRITENAME',
-            nourl = 'Yes',
-            sheetsize = {},
-            spacing = {},
-            stylesheet = true,
-            url = require( [[Module:Sprite]] ).getUrl( 'SPRITENAMESprite.png'),
-            width = {},
-        }},
-        sections = {{
-            {{ name = 'Uncategorized', id = 1 }},
-        }},
         ids = {{""".format(str(IMAGE_HEIGHT), str(sprite.sheet_width), str(IMAGE_GAP), str(IMAGE_WIDTH)).replace(
         'SPRITENAME', SPRITE_NAME)
 ]

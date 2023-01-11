@@ -2,7 +2,7 @@ import os
 import sprite_creator
 
 SUFFIX = ''
-SPRITE_NAME = 'awakenings'
+SPRITE_NAME = 'types'
 IMAGE_DIR = 'Sprites/' + SPRITE_NAME + ' Images'
 DATA_FILE_LOCATION = 'Sprites/' + SPRITE_NAME + 'Sprite' + SUFFIX + '.txt'
 IMAGE_WIDTH = 25
@@ -16,20 +16,16 @@ sprite = sprite_creator.Sprite(IMAGE_WIDTH, IMAGE_HEIGHT, IMAGES_ACROSS, IMAGE_G
 sprite.create_new()
 
 lines = [
-    """return {{
-        ids = {{""".format(str(IMAGE_HEIGHT), str(sprite.sheet_width), str(IMAGE_GAP), str(IMAGE_WIDTH)).replace(
-        'SPRITENAME', SPRITE_NAME)
+    """const {}_SPRITE_PROPS = {{""".format(SPRITE_NAME.upper())
 ]
 
 for pos, fname in enumerate(os.listdir(IMAGE_DIR)):
     name = fname.replace('.png', '')
     sprite.add_next_image_from_file(IMAGE_DIR + '/' + fname)
-    lines.append('\t\t["{}"] = {{ pos = {}, section = 1 }},'.format(name.replace('_', ' '), pos + 2))
+    lines.append('\t{}: new SpriteCoordinates({}, {}, {}, {}),'
+                 .format(pos, sprite.current_x, sprite.current_y, IMAGE_WIDTH, IMAGE_HEIGHT))
 
-lines.append('\t\t["{}"] = {{ pos = {}, section = 1 }},'.format('unknown', '1'))
-
-lines.append('	},')
-lines.append('}')
+lines.append("""}""")
 
 with open(DATA_FILE_LOCATION, 'w', encoding="utf-8") as f:
     f.write('\n'.join(lines))

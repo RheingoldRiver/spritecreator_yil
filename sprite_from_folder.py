@@ -33,6 +33,5 @@ with open(DATA_FILE_LOCATION, 'w', encoding="utf-8") as f:
 
 sprite.save()
 
-sprite.increment_current_location()
-print("Width: " + str(sprite.current_x))
-print("Height: " + str(sprite.current_y))
+print("Width: " + str(sprite.sheet_width))
+print("Height: " + str(sprite.sheet_height))

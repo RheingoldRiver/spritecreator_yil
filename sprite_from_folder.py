@@ -2,13 +2,13 @@ import os
 import sprite_creator
 
 SUFFIX = ''
-SPRITE_NAME = 'types'
+SPRITE_NAME = 'subattr'
 IMAGE_DIR = 'Sprites/' + SPRITE_NAME + ' Images'
 DATA_FILE_LOCATION = 'Sprites/' + SPRITE_NAME + 'Sprite' + SUFFIX + '.txt'
-IMAGE_WIDTH = 25
-IMAGE_HEIGHT = 25
+IMAGE_WIDTH = 93
+IMAGE_HEIGHT = 93
 IMAGE_GAP = 2
-IMAGES_ACROSS = 4
+IMAGES_ACROSS = 3
 
 SPRITE_FILE_NAME = 'Sprites/' + SPRITE_NAME + 'Sprite' + SUFFIX
 
@@ -22,8 +22,9 @@ lines = [
 for pos, fname in enumerate(os.listdir(IMAGE_DIR)):
     name = fname.replace('.png', '')
     sprite.add_next_image_from_file(IMAGE_DIR + '/' + fname)
-    lines.append('\t{}: new SpriteCoordinates({}, {}, {}, {}),'
-                 .format(pos, sprite.current_x, sprite.current_y, IMAGE_WIDTH, IMAGE_HEIGHT))
+    lines.append('\tsubattr{}: new SpriteCoordinates({}, {}, {}, {}, "{}"),'
+                 .format(pos, sprite.current_x, sprite.current_y, IMAGE_WIDTH, IMAGE_HEIGHT,
+                         f"{SPRITE_NAME}Sprite.png"))
 
 lines.append("""}""")
 
@@ -31,3 +32,7 @@ with open(DATA_FILE_LOCATION, 'w', encoding="utf-8") as f:
     f.write('\n'.join(lines))
 
 sprite.save()
+
+sprite.increment_current_location()
+print("Width: " + str(sprite.current_x))
+print("Height: " + str(sprite.current_y))

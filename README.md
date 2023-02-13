@@ -24,6 +24,7 @@ These are assets from the mobile game Puzzle and Dragons made by Gungho.
 #### Image
 ![image](https://user-images.githubusercontent.com/18037011/218591027-309d3a07-a991-46e7-827a-35abf6fceb66.png)
 #### Code
+Note: Nopefully, don't worry about formatting here, because Prettier or similar will take care of that for you. In this case, I was entering into a longer list of items anyway, so even though my project turns off the trailing commma I did want that.
 ```js
 const SUBATTR_SPRITE_PROPS = {
 	subattr0: new SpriteCoordinates(0, 0, 93, 93, "subattrSprite.png"),

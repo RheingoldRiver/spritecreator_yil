@@ -1,4 +1,5 @@
 ## Sprite Creator
+Tooling is complicated & code is not, so this is not a CLI tool. Instead, you will edit the actual code to do what you want. If you think you can figure out on your own how to do this feel free to fork/clone and skip the readme, but I will provide instructions too.
 ### Instructions
 Edit only `sprite_from_folder.py`, please don't touch `sprite_creator.py`, or if you do & you break stuff don't ask me for help fixing it
 

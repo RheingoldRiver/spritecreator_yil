@@ -1,4 +1,5 @@
 ## Sprite Creator
+### Instructions
 Edit only `sprite_from_folder.py`, please don't touch `sprite_creator.py`, or if you do & you break stuff don't ask me for help fixing it
 
 Requirement: PIL, no idea what Python version but I wrote it in Python 3.8
@@ -17,3 +18,18 @@ This spritesheet creator only supports icons that are all of the same size. It w
     * Editing `sprite_creator.py`
     
     then that's outside of the scope and I can't help
+
+### Example output
+These are assets from the mobile game Puzzle and Dragons made by Gungho.
+#### Image
+![image](https://user-images.githubusercontent.com/18037011/218591027-309d3a07-a991-46e7-827a-35abf6fceb66.png)
+#### Code
+```js
+const SUBATTR_SPRITE_PROPS = {
+	subattr0: new SpriteCoordinates(0, 0, 93, 93, "subattrSprite.png"),
+	subattr1: new SpriteCoordinates(95, 0, 93, 93, "subattrSprite.png"),
+	subattr2: new SpriteCoordinates(190, 0, 93, 93, "subattrSprite.png"),
+	subattr3: new SpriteCoordinates(0, 95, 93, 93, "subattrSprite.png"),
+	subattr4: new SpriteCoordinates(95, 95, 93, 93, "subattrSprite.png"),
+}
+```
